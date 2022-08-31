@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 /**
  * @author Camilo Beltrán
@@ -21,7 +22,7 @@ public class FileUtils {
 
 	public static void writeString(String msg) throws IOException {
 		msg = msg + "\n";
-		Files.writeString(archivo.toPath(), msg);
+		Files.writeString(archivo.toPath(), msg, StandardOpenOption.APPEND);
 	}
 
 	public static boolean searchAcount(String account) throws IOException {

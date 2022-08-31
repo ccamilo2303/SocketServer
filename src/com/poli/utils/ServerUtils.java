@@ -30,7 +30,7 @@ public class ServerUtils {
 
 			if(message.contains("create")) {
 				try {
-					FileUtils.writeString(message);
+					FileUtils.writeString(message.replace("create", ""));
 					oos.writeObject("SAVE OK ");
 				}catch(Exception e){
 					oos.writeObject("SAVE NO-OK");
